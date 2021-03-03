@@ -3,11 +3,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import { AppBar, Grid, Toolbar, Button } from "@material-ui/core";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import "./Navbar.css";
-import {
-  
-  Link
-} from "react-router-dom";
-import { ButtonDefault, ButtonSmall } from "../buttons/Button";
+import { Link } from 'react-router-dom'
+
 
 const useStyles = makeStyles((theme) => ({
   imageStyle: {
@@ -25,11 +22,11 @@ function Navbar() {
             <Grid className={classes.imageStyle}>
               <img
                 className="navbar__logo"
-                src="/assets/Reach out to Us! (3)/fresh.png"
+                src="/assets/Reach out to Us! (3)/fresh.png" alt = " "
               /> 
             </Grid>
         
-            <Link to = '/login' className = 'header__link'>
+            <Link to = '/order' className = 'header__link'>
              <div className = 'header__option'>
                <span className = 'header__optionLineOne'>Order </span>
             
