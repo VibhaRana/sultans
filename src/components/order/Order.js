@@ -3,7 +3,14 @@ import "./Order.css";
 import Navbar from "../navbar/Navbar";
 import { makeStyles } from "@material-ui/core/styles";
 import { InputAuthForm, ButtonDefault } from "../buttons/Button";
-import { Box, Container, Grid, Typography, Paper, Hidden } from "@material-ui/core";
+import {
+  Box,
+  Container,
+  Grid,
+  Typography,
+  Paper,
+  Hidden,
+} from "@material-ui/core";
 import { Link, useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
@@ -49,31 +56,39 @@ function Order() {
     history.push("/products");
   }
   return (
-   
     <Grid container scomponent="main" className={classes.root}>
       <Hidden smDown>
         {/* <Grid item md={6} lg={6} xl={6} className={classes.image}>
             <img className = 'order' src = "/assets/Reach out to Us! (3)/Check If we ship in your area.png"/>
         </Grid> */}
-              <Grid item xs={false} sm={4} md={7} className={classes.image}></Grid>
+        <Grid item xs={false} sm={4} md={7} className={classes.image}></Grid>
       </Hidden>
-      <Grid item
+      <Grid
+        item
         xs={12}
         sm={8}
         md={5}
         component={Paper}
         elevation={6}
         square
-        style={{ backgroundColor: "#F2F0EF", color: "white" }}>
+        style={{ backgroundColor: "#F2F0EF", color: "white" }}
+      >
         <div className={classes.paper}>
           <Typography
             component="h1"
             variant="h5"
-            style={{ color: "black", fontSize: "30px", fontWeight: "bold" , marginTop: '2em'}}
+            style={{
+              color: "black",
+              fontSize: "30px",
+              fontWeight: "bold",
+              marginTop: "2em",
+            }}
           >
             Check Availability
           </Typography>
-          <Typography paragraph style = {{color: 'darkgray'}}>Let's make sure Fresh Meal Plan is available in your area</Typography>
+          <Typography paragraph style={{ color: "darkgray" }}>
+            Let's make sure Fresh Meal Plan is available in your area
+          </Typography>
           <form className={classes.form} noValidate>
             <InputAuthForm
               variant="outlined"
@@ -97,10 +112,9 @@ function Order() {
               id="email"
               autoComplete="email"
             />
-            
 
             <ButtonDefault
-            onClick={handleClick}
+              onClick={handleClick}
               type="submit"
               fullWidth
               variant="contained"
@@ -115,7 +129,6 @@ function Order() {
         </div>
       </Grid>
     </Grid>
-    
   );
 }
 

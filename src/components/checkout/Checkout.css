@@ -1,0 +1,29 @@
+.checkout {
+  display: flex !important;
+  padding: 20px !important;
+  background-color: grey !important;
+  height: max-content !important;
+}
+
+.checkout__ad {
+  width: 30%;
+  margin-bottom: 10px;
+  object-fit: contain;
+  height: 30%;
+}
+
+.checkout__title {
+  margin-right: 10px;
+  padding: 10px;
+  border-bottom: 1px solid lightgray;
+}
+
+.container {
+  width: 700px !important;
+  height: fit-content !important;
+  display: flex !important;
+  flex-direction: column !important;
+  border-radius: 5px !important;
+  border: 10px solid lightgray !important;
+  padding: 20px !important;
+}
