@@ -3,7 +3,7 @@ import "./Order.css";
 import Navbar from "../navbar/Navbar";
 import { makeStyles } from "@material-ui/core/styles";
 import { InputAuthForm, ButtonDefault } from "../buttons/Button";
-import { Box, Container, Grid, Typography, Paper } from "@material-ui/core";
+import { Box, Container, Grid, Typography, Paper, Hidden } from "@material-ui/core";
 import { Link, useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
@@ -16,6 +16,21 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+  },
+  image: {
+    backgroundImage: `url("/assets/Reach out to Us! (3)/Untitled design.png")`,
+    backgroundRepeat: "no-repeat",
+    backgroundColor:
+      theme.palette.type === "light"
+        ? theme.palette.grey[50]
+        : theme.palette.grey[900],
+    backgroundSize: "cover",
+    //  backgroundPosition: 'left',
+    objectFit: "fill",
+    width: "100%",
+    height: "100%",
+    margin: "auto",
+    padding: "1em",
   },
 
   form: {
@@ -31,17 +46,18 @@ function Order() {
   let history = useHistory();
 
   function handleClick() {
-    history.push("/product");
+    history.push("/products");
   }
   return (
-    <Grid container component="main" className={classes.root}>
-      <Grid item xs={false} sm={4} md={7} >
-        <img
-          className="order"
-          src="/assets/Reach out to Us! (3)/Check Availability in your area (2).png"
-        />
-      </Grid>
-      <Grid iitem
+   
+    <Grid container scomponent="main" className={classes.root}>
+      <Hidden smDown>
+        {/* <Grid item md={6} lg={6} xl={6} className={classes.image}>
+            <img className = 'order' src = "/assets/Reach out to Us! (3)/Check If we ship in your area.png"/>
+        </Grid> */}
+              <Grid item xs={false} sm={4} md={7} className={classes.image}></Grid>
+      </Hidden>
+      <Grid item
         xs={12}
         sm={8}
         md={5}
@@ -99,6 +115,7 @@ function Order() {
         </div>
       </Grid>
     </Grid>
+    
   );
 }
 

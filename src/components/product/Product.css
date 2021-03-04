@@ -1,0 +1,12 @@
+.button {
+    text-align: center !important;
+  color: white !important;
+  border: solid 3px black !important;
+  z-index: 1 !important;
+  background-color: black !important;
+  border-radius: 5px !important;
+  text-align: center !important;
+
+  margin: auto !important;
+  margin-left: 3em !important;
+}

@@ -54,7 +54,7 @@ export default function Login() {
 
   return (
     <Grid container component="main" className={classes.root}>
-      <Grid item xs={false} sm={4} md={7} className={classes.image}></Grid>
+      <Grid item xs={false} sm={6} md={6} className={classes.image}></Grid>
       <Grid
         item
         xs={12}
