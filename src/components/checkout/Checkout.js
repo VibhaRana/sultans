@@ -5,12 +5,15 @@ import CheckoutProduct from "./CheckoutProduct";
 
 import { useStateValue } from "../../StateProvider";
 import { Container, Grid } from "@material-ui/core";
+import Subtotal from './Subtotal';
+import Footer from '../Footer';
 
 function Checkout() {
   const [{ basket, user }, dispatch] = useStateValue();
   return (
     <Grid className="checkout" style={{ backgroundColor: "white" }}>
       <Container className="container" style={{ backgroundColor: "#F2F0EF" }}>
+      <div className="checkout__right" style = {{float : 'right'}}> <Subtotal /> </div> 
         <div
           className="checkout__left"
           style={{
@@ -40,11 +43,18 @@ function Checkout() {
                 />
               </Grid>
             ))}
+ 
           </div>
+
         </div>
+
       </Container>
 
-      <div className="checkout__right">{/* <Subtotal /> */}</div>
+  
+       <Container>
+          
+         
+      </Container> 
     </Grid>
   );
 }

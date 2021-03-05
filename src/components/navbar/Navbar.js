@@ -35,9 +35,11 @@ function Navbar() {
                 <span className="header__optionLineOne">Order </span>
               </div>
             </Link>
+            &nbsp;
+          
             <Link to="/login" className="header__link">
               <div className="header__optionLogin">
-                <span className="header__optionLineTwo">Login </span>
+                <span className="header__optionLineOne">Login </span>
               </div>
             </Link>
             <Link to="/checkout" className="header__link">
