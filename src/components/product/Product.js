@@ -6,7 +6,7 @@ import {
   Card,
   CardActions,
   CardContent,
-  CardHeader,
+
   CardMedia,
   Grid,
   Button,

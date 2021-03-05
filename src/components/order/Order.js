@@ -4,14 +4,13 @@ import Navbar from "../navbar/Navbar";
 import { makeStyles } from "@material-ui/core/styles";
 import { InputAuthForm, ButtonDefault } from "../buttons/Button";
 import {
-  Box,
-  Container,
+ 
   Grid,
   Typography,
   Paper,
   Hidden,
 } from "@material-ui/core";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
