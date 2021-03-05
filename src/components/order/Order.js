@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Order.css";
 import Navbar from "../navbar/Navbar";
 import { makeStyles } from "@material-ui/core/styles";
@@ -51,10 +51,26 @@ const useStyles = makeStyles((theme) => ({
 function Order() {
   const classes = useStyles();
   let history = useHistory();
+  const [state, setState] = useState({
+    zipCode: "",
+    email: ""
+  })
+ 
+
 
   function handleClick() {
     history.push("/products");
   }
+
+  function handleChange(e) {
+    const {value, name }= e.target;
+    setState({
+      ...state,
+      [e.target.name]: value
+    });
+  }
+  
+
   return (
     <Grid container scomponent="main" className={classes.root}>
       <Hidden smDown>
@@ -91,17 +107,22 @@ function Order() {
           </Typography>
           <form className={classes.form} noValidate>
             <InputAuthForm
+             value = {state.zipCode}
+              name="zipCode"
               variant="outlined"
               margin="normal"
               required
               fullWidth
               id="zipCode"
               placeholder="Shipping zip code"
-              name="zipCode"
+            
               autoComplete="zip-code"
               //   autoFocus
+               onChange={handleChange}
             />
             <InputAuthForm
+           
+             value = {state.email}
               variant="outlined"
               margin="normal"
               required
@@ -111,10 +132,13 @@ function Order() {
               type="email"
               id="email"
               autoComplete="email"
+              onChange = {handleChange}
+          
             />
 
             <ButtonDefault
               onClick={handleClick}
+               disabled={!state.zipCode}
               type="submit"
               fullWidth
               variant="contained"

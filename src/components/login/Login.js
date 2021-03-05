@@ -4,7 +4,7 @@ import Link from "@material-ui/core/Link";
 import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
-
+import { useHistory } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import { InputAuthForm, ButtonDefault } from "../buttons/Button";
@@ -46,6 +46,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Login() {
   const classes = useStyles();
+  let history = useHistory();
+
+  function handleLoginClick() {
+    history.push("/order");
+  }
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -103,7 +108,7 @@ export default function Login() {
             </Box>
 
             <ButtonDefault
-              type="submit"
+             onClick = {handleLoginClick}
               fullWidth
               variant="contained"
               color="primary"

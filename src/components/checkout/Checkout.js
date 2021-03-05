@@ -5,15 +5,18 @@ import CheckoutProduct from "./CheckoutProduct";
 
 import { useStateValue } from "../../StateProvider";
 import { Container, Grid } from "@material-ui/core";
-import Subtotal from './Subtotal';
-import Footer from '../Footer';
+import Subtotal from "./Subtotal";
+import reducer from "../../reducer";
 
 function Checkout() {
   const [{ basket, user }, dispatch] = useStateValue();
   return (
     <Grid className="checkout" style={{ backgroundColor: "white" }}>
       <Container className="container" style={{ backgroundColor: "#F2F0EF" }}>
-      <div className="checkout__right" style = {{float : 'right'}}> <Subtotal /> </div> 
+        <div className="checkout__right" style={{ float: "right" }}>
+          {" "}
+          <Subtotal />{" "}
+        </div>
         <div
           className="checkout__left"
           style={{
@@ -25,7 +28,7 @@ function Checkout() {
         >
           <div>
             <div style={{ marginTop: "6em" }}>
-              <h4 style={{ fontFamily: "fantasy" }}>Hello {user?.email}</h4>
+              <h4 style={{ fontFamily: "fantasy" }}>Hello</h4>
               <h2 style={{ fontFamily: "fantasy" }} className="checkout__title">
                 Your Shopping Basket
               </h2>
@@ -43,18 +46,11 @@ function Checkout() {
                 />
               </Grid>
             ))}
- 
           </div>
-
         </div>
-
       </Container>
 
-  
-       <Container>
-          
-         
-      </Container> 
+      <Container></Container>
     </Grid>
   );
 }

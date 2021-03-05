@@ -33,7 +33,7 @@ function CheckoutProduct({ id, title, image, price, description }) {
             height: "30px",
           }}
         >
-          Remove from basket
+          Remove from Cart
         </button>
       </div>
     </div>

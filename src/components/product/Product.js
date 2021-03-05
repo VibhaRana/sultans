@@ -15,7 +15,13 @@ import {
 const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: 300,
+    "&:hover": {
+      opacity: 0.5,
+     
+    },
   },
+ 
+  
 }));
 
 function Product({ id, title, image, price, description }) {
@@ -35,10 +41,11 @@ function Product({ id, title, image, price, description }) {
         description: description,
       },
     });
+   alert("Item added to cart")
   };
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12} sm={6} lg={4} xl={4}>
+      <Grid item xs={12} sm={6} lg={4} xl={4} className = 'card' style = {{}}>
         <Card className={classes.root}>
           <CardMedia className={classes.media}>
             <img src={image} alt="cooking" />
@@ -64,7 +71,7 @@ function Product({ id, title, image, price, description }) {
           </CardContent>
           <CardActions>
             <Button className="button" onClick={addToBasket}>
-              Add to basket
+              Add to Cart
             </Button>
           </CardActions>
         </Card>
